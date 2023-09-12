@@ -40,6 +40,8 @@ services:
       - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
     ports:
       - "80:80"
+    command: ["nginx-degub", "-g", "deamon-off;"]
+    depends_on: [client]
 
   emongo:
     image: mongo:4
